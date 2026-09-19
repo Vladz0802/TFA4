@@ -1,0 +1,359 @@
+/* Corner Shop POS — visual identity
+   A neighborhood sari-sari store's first digital counter.
+   Palette: pine green signage, mustard trim, cream ledger paper, ink text. */
+
+:root {
+  --pine: #1f3a2e;
+  --pine-dark: #142720;
+  --mustard: #d9a441;
+  --mustard-dark: #b5822c;
+  --paper: #f5efe1;
+  --paper-card: #fffdf7;
+  --ink: #24211c;
+  --ink-soft: #574f3f;
+  --rule: #d8cfb8;
+  --radius: 4px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+h1, h2, h3 {
+  font-family: "Fraunces", Georgia, serif;
+  color: var(--pine-dark);
+  margin: 0 0 0.4em;
+  line-height: 1.15;
+}
+
+h1 { font-size: clamp(2.1rem, 4vw, 3.2rem); font-weight: 600; }
+h2 { font-size: 1.6rem; font-weight: 600; }
+
+p { max-width: 62ch; }
+
+a {
+  color: var(--pine-dark);
+}
+
+/* ---------- Header / navigation ---------- */
+
+.site-header {
+  background: var(--pine);
+  border-bottom: 3px solid var(--mustard);
+}
+
+.navigation {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0.9rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.brand {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: var(--paper);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.brand span {
+  color: var(--mustard);
+}
+
+.navigation-links {
+  display: flex;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+}
+
+.navigation-links a {
+  color: #e9e2cf;
+  text-decoration: none;
+  font-size: 0.98rem;
+  padding: 0.3rem 0.1rem;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.navigation-links a:hover,
+.navigation-links a:focus-visible {
+  color: var(--mustard);
+  border-bottom-color: var(--mustard);
+}
+
+.navigation-links a[aria-current="page"] {
+  color: var(--mustard);
+  border-bottom-color: var(--mustard);
+}
+
+/* ---------- Layout shells ---------- */
+
+.content {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.site-footer {
+  border-top: 1px solid var(--rule);
+  padding: 1.6rem 1.5rem;
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+}
+
+/* ---------- Hero (landing page) ---------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  padding: 2rem 0 3rem;
+}
+
+@media (max-width: 760px) {
+  .hero { grid-template-columns: 1fr; }
+}
+
+.hero-tag {
+  color: var(--mustard-dark);
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  font-size: 1.02rem;
+}
+
+.hero-lede {
+  color: var(--ink-soft);
+  font-size: 1.12rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 0.9rem;
+  margin-top: 1.6rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.98rem;
+  border: 2px solid transparent;
+  transition: transform 0.12s ease, background 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--pine);
+  color: var(--paper);
+}
+
+.btn-primary:hover {
+  background: var(--pine-dark);
+}
+
+.btn-secondary {
+  border-color: var(--pine);
+  color: var(--pine-dark);
+}
+
+.btn-secondary:hover {
+  background: var(--pine);
+  color: var(--paper);
+}
+
+.hero-counter {
+  background: var(--pine-dark);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  color: var(--paper);
+}
+
+.hero-counter .row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.7rem 0;
+  border-bottom: 1px dashed rgba(245, 239, 225, 0.25);
+}
+
+.hero-counter .row:last-child {
+  border-bottom: none;
+}
+
+.hero-counter .num {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.5rem;
+  color: var(--mustard);
+}
+
+.hero-counter .label {
+  color: #cfc7ae;
+  font-size: 0.92rem;
+}
+
+/* ---------- Quick links (landing page) ---------- */
+
+.quick-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 760px) {
+  .quick-links { grid-template-columns: 1fr; }
+}
+
+.quick-link {
+  display: block;
+  background: var(--paper-card);
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--mustard);
+  padding: 1.4rem 1.3rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.quick-link h3 {
+  margin-bottom: 0.3rem;
+  color: var(--pine-dark);
+  font-size: 1.15rem;
+}
+
+.quick-link p {
+  color: var(--ink-soft);
+  font-size: 0.93rem;
+  margin: 0;
+}
+
+/* ---------- About page ---------- */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2.5rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 760px) {
+  .about-grid { grid-template-columns: 1fr; }
+}
+
+.fact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--rule);
+}
+
+.fact-list li {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.94rem;
+}
+
+.fact-list .k {
+  color: var(--ink-soft);
+}
+
+.fact-list .v {
+  font-weight: 600;
+  text-align: right;
+}
+
+/* ---------- Ledger tables (customers / users) ---------- */
+
+.page-heading {
+  margin-bottom: 0.3rem;
+}
+
+.page-sub {
+  color: var(--ink-soft);
+  margin-bottom: 1.8rem;
+}
+
+.ledger {
+  background: var(--paper-card);
+  border: 1px solid var(--rule);
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 480px;
+}
+
+thead {
+  background: var(--pine);
+}
+
+th {
+  text-align: left;
+  color: var(--paper);
+  font-weight: 600;
+  padding: 0.85rem 1.2rem;
+  font-size: 0.9rem;
+}
+
+td {
+  padding: 0.85rem 1.2rem;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.95rem;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:nth-child(even) {
+  background: rgba(217, 164, 65, 0.07);
+}
+
+.role-tag {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius);
+  font-size: 0.82rem;
+  font-weight: 600;
+  background: rgba(31, 58, 46, 0.1);
+  color: var(--pine-dark);
+}
+
+/* ---------- Accessibility ---------- */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--mustard-dark);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
