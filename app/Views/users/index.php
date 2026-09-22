@@ -10,7 +10,6 @@
             <tr>
                 <th scope="col">Username</th>
                 <th scope="col">Full Name</th>
-                <th scope="col">Role</th>
             </tr>
         </thead>
         <tbody>
