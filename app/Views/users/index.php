@@ -16,7 +16,7 @@
             <?php foreach ($users as $user): ?>
                 <tr>
                     <td><?= esc($user['username']) ?></td>
-                    <td><?= esc($user['fullName']) ?></td>
+                    <td><?= esc($user['full_name']) ?></td>
                     <td><span class="role-tag"><?= esc($user['role']) ?></span></td>
                 </tr>
             <?php endforeach; ?>
