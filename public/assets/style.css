@@ -357,3 +357,73 @@ button:focus-visible {
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
+
+/* ---------- Forms (TFA3) ---------- */
+
+.page-actions {
+  margin: 0 0 1.2rem;
+}
+
+.flash-success {
+  background: rgba(31, 58, 46, 0.1);
+  border-left: 4px solid var(--pine);
+  padding: 0.7rem 1rem;
+  margin: 0 0 1.2rem;
+  max-width: none;
+}
+
+.form-card {
+  background: var(--paper-card);
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--mustard);
+  padding: 1.8rem;
+  max-width: 520px;
+}
+
+.form-field {
+  margin-bottom: 1.2rem;
+}
+
+.form-field label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.form-field input[type="text"],
+.form-field input[type="file"] {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: #fff;
+  font: inherit;
+}
+
+.form-field input:focus-visible {
+  outline: 2px solid var(--mustard-dark);
+  outline-offset: 1px;
+}
+
+.help-block {
+  display: block;
+  color: #a12626;
+  font-size: 0.88rem;
+  margin-top: 0.3rem;
+}
+
+button.btn {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.avatar {
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--rule);
+}
+
+.avatar-lg {
+  display: block;
+  margin-bottom: 0.6rem;
+}
