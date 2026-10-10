@@ -28,6 +28,8 @@ class Users extends BaseController
         $rules = [
             'username'  => 'required|alpha_numeric|min_length[4]|max_length[50]|is_unique[users.username]',
             'full_name' => 'required|min_length[3]|max_length[100]',
+            'password'  => 'required|min_length[8]|max_length[72]',
+            'password_confirm' => 'required|matches[password]',
         ];
 
         if (! $this->validate($rules)) {
@@ -37,6 +39,7 @@ class Users extends BaseController
         (new UserModel())->insert([
             'username'   => $this->request->getPost('username'),
             'full_name'  => $this->request->getPost('full_name'),
+            'password'   => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
             'created_at' => date('Y-m-d H:i:s'),
         ]);
 
@@ -68,6 +71,9 @@ class Users extends BaseController
         $rules = [
             'username'  => "required|alpha_numeric|min_length[4]|max_length[50]|is_unique[users.username,id,{$id}]",
             'full_name' => 'required|min_length[3]|max_length[100]',
+            // Leave blank to keep the current password
+            'password'  => 'permit_empty|min_length[8]|max_length[72]',
+            'password_confirm' => 'matches[password]',
         ];
 
         // The avatar is optional: only validate it when a file was chosen
@@ -94,6 +100,12 @@ class Users extends BaseController
             'username'  => $this->request->getPost('username'),
             'full_name' => $this->request->getPost('full_name'),
         ];
+
+        // Only change the password when a new one was typed
+        $newPassword = (string) $this->request->getPost('password');
+        if ($newPassword !== '') {
+            $data['password'] = password_hash($newPassword, PASSWORD_DEFAULT);
+        }
 
         if ($hasFile) {
             $uploadPath = FCPATH . 'uploads';

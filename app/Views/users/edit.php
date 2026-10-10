@@ -26,6 +26,18 @@
     </div>
 
     <div class="form-field">
+        <label for="password">New Password (leave blank to keep the current one)</label>
+        <input type="password" id="password" name="password" autocomplete="new-password">
+        <?= validation_show_error('password') ?>
+    </div>
+
+    <div class="form-field">
+        <label for="password_confirm">Confirm New Password</label>
+        <input type="password" id="password_confirm" name="password_confirm" autocomplete="new-password">
+        <?= validation_show_error('password_confirm') ?>
+    </div>
+
+    <div class="form-field">
         <label for="avatar">Profile Picture</label>
         <img class="avatar avatar-lg" src="<?= esc($current, 'attr') ?>" width="96" height="96" alt="Current avatar">
         <input type="file" id="avatar" name="avatar" accept="image/jpeg,image/png">

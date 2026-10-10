@@ -391,6 +391,7 @@ button:focus-visible {
 }
 
 .form-field input[type="text"],
+.form-field input[type="password"],
 .form-field input[type="file"] {
   width: 100%;
   padding: 0.6rem 0.75rem;
@@ -426,4 +427,43 @@ button.btn {
 .avatar-lg {
   display: block;
   margin-bottom: 0.6rem;
+}
+
+/* ---------- Authentication (TFA4) ---------- */
+
+.flash-error {
+  background: rgba(161, 38, 38, 0.1);
+  border-left: 4px solid #a12626;
+  padding: 0.7rem 1rem;
+  margin: 0 0 1.2rem;
+  max-width: none;
+}
+
+.logout-form {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 0;
+}
+
+.nav-user {
+  color: var(--mustard);
+  font-size: 0.92rem;
+}
+
+.nav-logout {
+  background: none;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  color: #e9e2cf;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.98rem;
+  padding: 0.3rem 0.1rem;
+}
+
+.nav-logout:hover,
+.nav-logout:focus-visible {
+  color: var(--mustard);
+  border-bottom-color: var(--mustard);
 }

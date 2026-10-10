@@ -18,6 +18,15 @@
                 <a href="<?= site_url('about') ?>" <?= ($active ?? '') === 'about' ? 'aria-current="page"' : '' ?>>About</a>
                 <a href="<?= site_url('customers') ?>" <?= ($active ?? '') === 'customers' ? 'aria-current="page"' : '' ?>>Customers</a>
                 <a href="<?= site_url('users') ?>" <?= ($active ?? '') === 'users' ? 'aria-current="page"' : '' ?>>Staff</a>
+                <?php if (session()->get('isLoggedIn') === true): ?>
+                    <form class="logout-form" method="post" action="<?= site_url('logout') ?>">
+                        <?= csrf_field() ?>
+                        <span class="nav-user">Hi, <?= esc(session()->get('full_name')) ?></span>
+                        <button type="submit" class="nav-logout">Log out</button>
+                    </form>
+                <?php else: ?>
+                    <a href="<?= site_url('login') ?>" <?= ($active ?? '') === 'login' ? 'aria-current="page"' : '' ?>>Log in</a>
+                <?php endif; ?>
             </div>
         </nav>
     </header>

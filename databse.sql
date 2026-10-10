@@ -56,6 +56,8 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
   `full_name` varchar(100) NOT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `avatar` varchar(255) DEFAULT NULL,
   `created_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -63,12 +65,12 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `full_name`, `created_at`) VALUES
-(1, 'jcruz', 'Juan Dela Cruz', '2026-09-22 19:30:35'),
-(2, 'msantos', 'Maria Santos', '2026-09-22 19:30:35'),
-(3, 'preyes', 'Pedro Reyes', '2026-09-22 19:30:35'),
-(4, 'alim', 'Ana Lim', '2026-09-22 19:30:35'),
-(5, 'cbautista', 'Carlo Bautista', '2026-09-22 19:30:35');
+INSERT INTO `users` (`id`, `username`, `full_name`, `password`, `created_at`) VALUES
+(1, 'jcruz', 'Juan Dela Cruz', '$2y$10$LzuiJvjW1B55sCRrSUSItOS0d5pL2hrzz5/9o6Bt/WTzNksft97GO', '2026-09-22 19:30:35'),
+(2, 'msantos', 'Maria Santos', '$2y$10$bHa9cmV/SKf2HWKljdt2RelrBf1gDd0ox3ELVMrX78N/NS011xRAO', '2026-09-22 19:30:35'),
+(3, 'preyes', 'Pedro Reyes', '$2y$10$D1BtA7dYHHLQFFk1wkowJu1cI25gfhplTi9eT21aQ9ox2jAN93kWW', '2026-09-22 19:30:35'),
+(4, 'alim', 'Ana Lim', '$2y$10$XSpkBJU9q1u3StxzayUyQO0U/k12uLzQ22pReDhVJ1RLrY3CgHcla', '2026-09-22 19:30:35'),
+(5, 'cbautista', 'Carlo Bautista', '$2y$10$FnCrYnKb4qVlAz0JMsX7ouz4KRxRoC/FhqkgN0aFl9hyjqA6No89.', '2026-09-22 19:30:35');
 
 --
 -- Indexes for dumped tables
